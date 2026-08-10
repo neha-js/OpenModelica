@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.env
+.DS_Store
+build/
+dist/
+*.spec
+
+# Keep the executable folder but ignore generated binaries
+executable/*
+!executable/README.md
