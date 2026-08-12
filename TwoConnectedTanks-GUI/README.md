@@ -4,25 +4,22 @@ A PyQt-based GUI for running a Two Connected Tanks simulation built from an Open
 
 ## Project structure
 
-```text
 TwoConnectedTanks-GUI/
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
-├── executable/              # Place the OMEdit build output here
+├── executable/             
 │   └── README.md
 ├── src/
-│   ├── main.py               # Application entry point
+│   ├── main.py              
 │   ├── core/
-│   │   ├── validators.py     # Input validation (no Qt dependency)
-│   │   └── simulation_runner.py  # QProcess wrapper that runs the executable
+│   │   ├── validators.py     
+│   │   └── simulation_runner.py  
 │   └── gui/
-│       └── main_window.py    # QMainWindow: layout, widgets, signal wiring
+│       └── main_window.py    
 └── tests/
-    └── test_validators.py    # Unit tests for the validation rules
-```
+    └── test_validators.py   
 
-## Setup
 
 ```bash
 cd TwoConnectedTanks-GUI
@@ -38,8 +35,15 @@ pip install -r requirements.txt
 python src/main.py
 ```
 
+## Tests
+
+```bash
+python -m pytest -q
+```
+
 ## Notes
 
 - Keep Qt-specific code in the GUI layer.
 - Keep validation logic in the `core` package so it remains easy to test.
 - Place the compiled OpenModelica executable in `executable/`.
+- The GUI looks for a runnable executable in `executable/` and reports a clear error if none is found.
