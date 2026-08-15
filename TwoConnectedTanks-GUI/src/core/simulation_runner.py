@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from PyQt5.QtCore import QProcess
+from PyQt6.QtCore import QProcess
 
 
 class SimulationRunner:
@@ -23,7 +23,7 @@ class SimulationRunner:
         return self._process.waitForStarted(1000)
 
     def is_running(self) -> bool:
-        return self._process.state() != QProcess.NotRunning
+        return self._process.state() != QProcess.ProcessState.NotRunning
 
     def terminate(self) -> None:
         self._process.terminate()
